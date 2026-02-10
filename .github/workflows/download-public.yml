@@ -15,11 +15,11 @@ jobs:
 
       - name: Download macOS Installer (latest public 26.1)
         run: |
-          python ./gibMacOS/gibMacOS.py -c publicrelease -v Tahoe -m 26 -o /tmp/Tahoe-public-latest
+          python ./gibMacOS/gibMacOS.py -c publicrelease -v Tahoe -m 26 -o /tmp/Tahoe-public
 
       - name: Install the assistant
         run: |
-          sudo installer -pkg /tmp/Tahoe-public-latest/InstallAssistant.pkg -target /
+          sudo installer -pkg /tmp/Tahoe-public/InstallAssistant.pkg -target /
 
       - name: Generate macOS Installer
         run: |
@@ -65,4 +65,5 @@ jobs:
           name: com.apple.recovery.boot
           path: /tmp/BaseSystem/*
           compression-level: 9
+
 
